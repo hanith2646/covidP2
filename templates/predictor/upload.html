@@ -1,0 +1,15 @@
+{% extends "header.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container py-5">
+    <h1>Upload Xray to Predict</h1>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button class="btn btn-primary" type="submit">Upload</button>
+    </form>
+    {% if xray %}
+        <p class="text-center">The prediction test for {{ xray.name }} results {{ xray.result }}</p>
+    {% endif %}
+    </div>
+{% endblock %}
