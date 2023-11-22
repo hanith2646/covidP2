@@ -9,6 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form | Let It Free</title>
   <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -24,6 +35,7 @@
       background: url(https://images.axios.com/jP96rzDniBohQRG2KCml5NcFBnQ=/0x0:1920x1080/1920x1080/2022/07/21/1658433619954.jpg?w=1920) no-repeat;
       background-size: cover;
       background-position: center;
+      animation: fadeIn 1s ease-out;
     }
 
     .wrapper {
@@ -34,6 +46,7 @@
       color: #fff;
       border-radius: 12px;
       padding: 30px 40px;
+      animation: fadeIn 1s ease-out;
     }
 
     .wrapper h1.main-title {
@@ -46,10 +59,10 @@
       font-size: 24px;
       text-align: center;
       margin-bottom: 30px;
-      color: #fff; /* Set color for the subtitle */
+      color: #fff;
     }
 
-    .wrapper .input-box {
+    .input-box {
       position: relative;
       width: 100%;
       height: 50px;
@@ -57,7 +70,7 @@
     }
 
     .input-box input {
-      width: 100%;
+      width: calc(100% - 40px);
       height: 100%;
       background: transparent;
       border: none;
@@ -69,19 +82,19 @@
       padding: 20px 45px 20px 20px;
     }
 
+    .input-box i {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+    }
+
     .input-box input::placeholder {
       color: #fff;
     }
 
-    .input-box i {
-      position: absolute;
-      right: 20px;
-      top: 30%;
-      transform: translate(-50%);
-      font-size: 20px;
-    }
-
-    .wrapper .remember-forgot {
+    .remember-forgot {
       display: flex;
       justify-content: space-between;
       font-size: 14.5px;
@@ -102,7 +115,7 @@
       text-decoration: underline;
     }
 
-    .wrapper .btn {
+    .btn {
       width: 100%;
       height: 45px;
       background: #fff;
@@ -114,9 +127,18 @@
       font-size: 16px;
       color: #333;
       font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .wrapper .register-link {
+    .btn:hover {
+      background-color: #f0f0f0;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .register-link {
       font-size: 14.5px;
       text-align: center;
       margin: 20px 0 15px;
@@ -131,6 +153,7 @@
     .register-link p a:hover {
       text-decoration: underline;
     }
+
   </style>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
