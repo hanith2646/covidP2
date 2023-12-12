@@ -15,6 +15,7 @@ urlpatterns = [
     path('analysis/', views.analysis_view, name='analysis'),
     path('personal/', views.personal_view, name='personal'),
     path('case/', views.case_view, name='case'),
+    path('precautions/', views.precautions_view, name='precautions'),
 
     # Use analysis_view
 ]

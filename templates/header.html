@@ -13,6 +13,7 @@
         .navbar-nav li:hover {
             background-color: #e6e6e6;
             transition: background-color 0.3s;
+            border-radius: 100px;
         }
 
         /* Style for all nav links */
@@ -20,8 +21,9 @@
             text-decoration: none;
             color: #333;
             position: relative;
-            padding: 10px 15px; /* Adjust the padding as needed */
-            transition: color 0.3s; /* Smooth color transition */
+            padding: 1px 1px; /* Adjust the padding as needed */
+            transition: color 0.5s; /* Smooth color transition */
+            border-radius: 100px;
         }
 
         /* Change color on hover */
@@ -57,8 +59,10 @@
 <body>
 <div>
     {% if user.is_authenticated %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 8px 15px 8px 15px">
-        <a class="navbar-brand" href="#">LET IT FREE</a>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding: 8px 15px 8px 15px">
+        <a class="navbar-brand" href="#">
+            <img src="https://raw.githubusercontent.com/htmw/2023S-Team4/main/documents/tools/LOGO.jpeg" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+            LET IT FREE</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -81,6 +85,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'accounts:case' %}">Active cases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/accounts/precautions">Self-check</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/accounts/logout">Logout</a>

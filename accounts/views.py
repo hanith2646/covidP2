@@ -65,3 +65,5 @@ def personal_view(request):
     return render(request, 'accounts/personal.html')
 def case_view(request):
     return render(request, 'accounts/case.html')
+def precautions_view(request):
+    return render(request, 'accounts/precautions.html')
